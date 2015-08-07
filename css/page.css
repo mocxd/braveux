@@ -1,0 +1,125 @@
+/* ==============A=======E========T========L========N======================== */
+/* ==========P=======G========S=======Y========A============================= */
+
+body {
+    background-color: #E0E5E8;
+    margin-top: 50px;
+}
+
+nav, section, aside, footer {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header > nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    background-color: #93278F;
+    color: #fff;
+    font-weight: 400;
+    z-index: 98;
+}
+
+nav.nav-left {
+    width: 100%;
+    padding: 15px 15px 15px 30px;
+}
+
+nav.nav-right {
+    position: fixed;
+    right: 0vh;
+    padding-top: 50px;
+    height: 100vh;
+    width: 0;
+    background-color: #662D91;
+    z-index: 99;
+    transition: width 3s ease-in;
+}
+
+nav.nav-right-expanded {
+    width: 70vh;
+}
+
+.nav-right-header {
+    width: 100%;
+    min-width: 110px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 0 15px 0;
+    background-color: #662D91;
+    z-index: 100;
+}
+
+nav.nav-right > li {
+    padding: 10px 10px 10px 20px;
+}
+
+.nav-right-header > span {
+    margin: 0 0 0 20px;
+}
+
+.nav-right-header > img {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+}
+
+section.main {
+    background-color: #ECEFF1;
+}
+
+img.logo {
+    width: 60px;
+    height: 60px;
+    padding: 30px;
+}
+
+p.info {
+    padding: 0px 30px 30px 30px;
+}
+
+form.login {
+    padding: 0 30px 0 30px;
+}
+
+.field {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background-color: #fff;
+    margin: 10px 0 10px 0;
+}
+
+.field > label {
+    color: #bbb;
+}
+
+.field > label#eye {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 0;
+    border: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+input.width-lg {
+    background-color: red;
+    height: 15px;
+}
+
+footer {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
