@@ -1,6 +1,7 @@
 // this is to expose the errors to popError. could pass it in, but... can't easily pop errors from the 'more' link that way
 // just doing it this way so that the errors can be easily popped from a dynamically generated link with innerHTML and not be a giant pita
 var errors = [];
+var errorPaneState = false;
 
 // Does validtions of the form fields, like a boss
 function validate () {
@@ -46,12 +47,16 @@ function validate () {
         hideError();
     }
 
+    console.log (errors.length);
+
     // returns true if no errors, false if any errors occured
     return errors.length === 0;
 }
 
 // Pop an error, using everyone's favorite red div
 function popError() {
+    // make us aware that there's an actual error pane up
+    errorPaneState = true;
     var errorPane = document.getElementById('errorPane');
     var more = '';
     var message = errors.pop();
@@ -68,12 +73,19 @@ function popError() {
 
 // Hide the error pane
 function hideError() {
-    var errorPane = document.getElementById('errorPane');
-    errorPane.style.transition = 'opacity 333ms linear';
-    errorPane.style.opacity = '0';
+    console.log (errorPaneState);
+    // this way we only trigger hide behavior if there is an actual error on the screen.  prevents some weirdybeardy stuff
+    // with the timeout from happening if you click into the fields to dismiss the message and then submit
+    // again too fast
+    if (errorPaneState) {
+        var errorPane = document.getElementById('errorPane');
+        errorPane.style.transition = 'opacity 333ms linear';
+        errorPane.style.opacity = '0';
 
-    // timeout is used to prevent the pane instantly disappearing by blinking out to 0 height during fade out
-    setTimeout(function() { errorPane.style.height = '0' }, 501);
+        // timeout is used to prevent the pane instantly disappearing by blinking out to 0 height during fade out
+        setTimeout(function() { errorPane.style.height = '0' }, 501);
+        errorPaneState = false;
+    }
 }
 
 // Toggles password visibility, like a miniboss

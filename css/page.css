@@ -220,6 +220,7 @@ footer > span {
     background-color: #ED1C24;
     box-shadow: 0 0 .5em #555;
     z-index: 96;
+    overflow: hidden;
 }
 
 .error * {

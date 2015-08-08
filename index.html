@@ -68,15 +68,18 @@
         <img class="logo" src="img/flag.svg" />
         <p class="info">Do NOT bookmark this page.</p>
         <h1 class="form-title">Sign Up</h1>
-        <form class="login" onsubmit="validate()" action="#">
-            <div id="usernameWrapper" class="field">
-                <label for="username">Username</label>
-                <input type="text" id="username" class="width-lg" onfocus="hideError()" />
-            </div>
-            <div id="passwordWrapper" class="field">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="width-lg" onfocus="hideError()" />
-                <a href="#" onclick="togglePassword()" class="btn-right"><img id="eye" src="img/eye.svg"></a>
+        <form class="login" onsubmit="return validate()" action="#">
+            <!-- onfocus events hide error messages when tabbing / onclick event hides shown error messages when clicking anywhere else within the form except the submit button -->
+            <div class="input-rows" onclick="hideError()">
+                <div id="usernameWrapper" class="field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="width-lg" onfocus="hideError()" />
+                </div>
+                <div id="passwordWrapper" class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="width-lg" onfocus="hideError()" />
+                    <a href="#" onclick="togglePassword()" class="btn-right"><img id="eye" src="img/eye.svg"></a>
+                </div>
             </div>
             <div class="submit-row">
                 <input id="signUp" type="submit" value="Sign Up" />
