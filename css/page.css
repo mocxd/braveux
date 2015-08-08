@@ -97,6 +97,7 @@ nav.nav-right > ul > ul > li:hover {
 section.main {
     background-color: #ECEFF1;
     padding: 4em 2em 3em 2em;
+    z-index: 50;
 }
 
 img.logo {
@@ -204,7 +205,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 97;
+    z-index: -100;
 }
 
 footer > span {
