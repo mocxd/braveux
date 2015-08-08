@@ -44,8 +44,8 @@
     <![endif]-->
     <header>
         <nav class="nav-left">The Brave UX App</nav>
-        <nav class="nav-right">
-            <div class="nav-right-header"><span>Menu</span><img src="img/hamburger.svg"></div>
+        <nav id="sideNav" class="nav-right">
+            <button class="nav-right-header" onclick="toggleNav()"><span>Menu</span><img src="img/hamburger.svg"></button>
             <ul>
                 <li>Dashboard</li>
                 <li>My Profile</li>
@@ -63,7 +63,7 @@
         <img class="logo" src="img/flag.svg" />
         <p class="info">Do NOT bookmark this page.</p>
         <h1 class="form-title">Sign Up</h1>
-        <form class="login">
+        <form class="login" onsubmit="validate()" action="#">
             <div class="field">
                 <label for="username">Username</label>
                 <input type="text" id="username" class="width-lg" />
@@ -73,10 +73,15 @@
                 <label for="password" id="eye">(eye)</label>
                 <input type="password" id="password" class="width-lg" />
             </div>
+            <input id="signUp" type="submit" value="Sign Up" />
+            <label for="signUp" class="label-right">Need Help?</label>
         </form>
     </section>
 
     <footer>Powered by Brave UX</footer>
+
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/validations.js"></script>
 
 </body>
 </html>

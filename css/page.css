@@ -32,13 +32,27 @@ nav.nav-right {
     height: 100vh;
     width: 0;
     background-color: #662D91;
+    box-shadow: 0 0 1em #222;
     z-index: 99;
-    transition: width 3s ease-in;
 }
 
-nav.nav-right-expanded {
-    width: 70vh;
+nav.nav-right ul {
+    list-style: none;
+    padding-left: 0;
 }
+
+nav.nav-right > ul > ul {
+    background-color: #4D226D;
+}
+
+nav.nav-right li {
+    padding: 10px 10px 10px 20px;
+    white-space: nowrap;
+}
+
+/*nav.nav-right-expanded {
+    width: 70vh;
+}*/
 
 .nav-right-header {
     width: 100%;
@@ -46,13 +60,15 @@ nav.nav-right-expanded {
     position: absolute;
     top: 0;
     right: 0;
+    border: 0;
+    text-align: left;
     padding: 15px 0 15px 0;
     background-color: #662D91;
     z-index: 100;
 }
 
-nav.nav-right > li {
-    padding: 10px 10px 10px 20px;
+.nav-right-header:focus {
+    outline: none;
 }
 
 .nav-right-header > span {
@@ -69,6 +85,7 @@ nav.nav-right > li {
 
 section.main {
     background-color: #ECEFF1;
+    padding: 0 0 50px 0;
 }
 
 img.logo {
@@ -82,7 +99,8 @@ p.info {
 }
 
 form.login {
-    padding: 0 30px 0 30px;
+    position: relative;
+    margin: 0 20px 0 20px;
 }
 
 .field {
@@ -95,6 +113,7 @@ form.login {
 
 .field > label {
     color: #bbb;
+    padding-left: 10px;
 }
 
 .field > label#eye {
@@ -114,8 +133,13 @@ input:focus {
 }
 
 input.width-lg {
-    background-color: red;
-    height: 15px;
+    height: 18px;
+}
+
+label.label-right {
+    position: absolute;
+    right: 0;
+    padding-top: 8px;
 }
 
 footer {
