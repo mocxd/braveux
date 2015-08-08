@@ -43,42 +43,49 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to not have a terrible experience.</p>
     <![endif]-->
     <header>
-        <nav class="nav-left">The Brave UX App</nav>
-        <nav id="sideNav" class="nav-right">
+        <nav class="nav-left" onclick="collapseNav()">The Brave UX App</nav>
+
+        <!-- style added inline to make toggle work correctly on first click -->
+        <nav id="sideNav" class="nav-right" style="width: 0vw;">
             <button class="nav-right-header" onclick="toggleNav()"><span>Menu</span><img src="img/hamburger.svg"></button>
             <ul>
-                <li>Dashboard</li>
-                <li>My Profile</li>
-                <li>Settings</li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Settings</a></li>
                 <ul>
-                    <li>Help</li>
-                    <li>About</li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
-                <li>Logout</li>
+                <li><a href="#">Logout</a></li>
             </ul>
         </nav>
     </header>
 
-    <section width="100%" class="main">
+    <!-- styles added inline to make toggle work correctly on first click -->
+    <div id="errorPane" class="error" onclick="collapseNav()" style="height: 0"><span></span></div>
+
+    <section width="100%" class="main" onclick="collapseNav()">
         <img class="logo" src="img/flag.svg" />
         <p class="info">Do NOT bookmark this page.</p>
         <h1 class="form-title">Sign Up</h1>
         <form class="login" onsubmit="validate()" action="#">
-            <div class="field">
+            <div id="usernameWrapper" class="field">
                 <label for="username">Username</label>
-                <input type="text" id="username" class="width-lg" />
+                <input type="text" id="username" class="width-lg" onfocus="hideError()" />
             </div>
-            <div class="field">
+            <div id="passwordWrapper" class="field">
                 <label for="password">Password</label>
-                <label for="password" id="eye">(eye)</label>
-                <input type="password" id="password" class="width-lg" />
+                <input type="password" id="password" class="width-lg" onfocus="hideError()" />
+                <a href="#" onclick="togglePassword()" class="btn-right"><img id="eye" src="img/eye.svg"></a>
             </div>
-            <input id="signUp" type="submit" value="Sign Up" />
-            <label for="signUp" class="label-right">Need Help?</label>
+            <div class="submit-row">
+                <input id="signUp" type="submit" value="Sign Up" />
+                <label for="signUp" class="label-right"><a href="#">Need help?</a></label>
+            </div>
         </form>
     </section>
 
-    <footer>Powered by Brave UX</footer>
+    <footer onclick="collapseNav()"><span>Powered by Brave UX</span></footer>
 
     <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/validations.js"></script>
