@@ -47,8 +47,6 @@ function validate () {
         hideError();
     }
 
-    console.log (errors.length);
-
     // returns true if no errors, false if any errors occured
     return errors.length === 0;
 }
@@ -73,10 +71,9 @@ function popError() {
 
 // Hide the error pane
 function hideError() {
-    console.log (errorPaneState);
-    // this way we only trigger hide behavior if there is an actual error on the screen.  prevents some weirdybeardy stuff
-    // with the timeout from happening if you click into the fields to dismiss the message and then submit
-    // again too fast
+    // this way we only trigger hide behavior if there is an actual error on the screen.
+    // prevents some weirdybeardy stuff with the animation from happening
+    // if you click into the fields to dismiss the message and then submit again too fast.
     if (errorPaneState) {
         var errorPane = document.getElementById('errorPane');
         errorPane.style.transition = 'opacity 333ms linear';
